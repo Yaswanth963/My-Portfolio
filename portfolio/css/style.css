@@ -175,18 +175,29 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-sub { font-size: clamp(1rem, 2.2vw, 1.2rem); color: var(--text-dim); max-width: 620px; margin: 0 auto 38px; }
 .hero-sub strong { color: var(--text); font-weight: 600; }
-.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
-.hero-stats { display: flex; gap: clamp(28px, 6vw, 64px); justify-content: center; flex-wrap: wrap; }
-.stat { display: flex; flex-direction: column; align-items: center; }
-.stat-value {
-  display: inline-flex; align-items: baseline;
-  font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em;
-  background: var(--grad); -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
+.hero-avatar { margin: 0 auto 30px; display: flex; justify-content: center; }
+.avatar-ring {
+  position: relative; width: clamp(140px, 32vw, 200px); height: clamp(140px, 32vw, 200px);
+  border-radius: 50%; padding: 4px;
+  background: var(--grad); background-size: 200% 200%;
+  animation: avatarSpin 6s linear infinite;
+  box-shadow: 0 12px 44px rgba(124, 92, 255, 0.4);
+  display: grid; place-items: center;
 }
-.stat-plus { font-size: 0.7em; }
-.stat-label { font-size: 0.82rem; color: var(--text-faint); margin-top: 4px; }
+@keyframes avatarSpin { to { background-position: 200% 0; } }
+.avatar-ring img {
+  width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+  border: 4px solid var(--bg); display: block; position: relative; z-index: 1;
+}
+.avatar-fallback {
+  position: absolute; inset: 4px; border-radius: 50%;
+  display: grid; place-items: center; z-index: 0;
+  background: var(--bg-2); color: var(--text);
+  font-size: clamp(2.6rem, 8vw, 3.8rem); font-weight: 800; letter-spacing: -0.03em;
+}
+.avatar-ring.avatar-empty { } /* fallback shows when img fails to load */
 
 .scroll-hint { position: absolute; bottom: 34px; left: 50%; transform: translateX(-50%); }
 .scroll-hint span {

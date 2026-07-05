@@ -1,5 +1,7 @@
-# My-Portfolio
-Check my portfolio
+A fast, responsive, single-page developer portfolio built with plain HTML, CSS, and
+vanilla JavaScript (no build step). Designed to be deployed on **GitHub Pages**.
+
+🔗 **Live:** https://yaswanth-perumalla-p.vercel.app/
 
 
 <img width="841" height="924" alt="image" src="https://github.com/user-attachments/assets/77d915bf-383b-40d4-bafc-6049a63ef134" />
